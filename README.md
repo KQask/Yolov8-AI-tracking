@@ -22,10 +22,9 @@ An experimental AI-assisted aim and tracking system for Valorant. Built entirely
 
 ## Roadmap
 - [x] Initial prototype with basic tracking
+- [x] Expand AI inference with ONNX models
 - [ ] Re-code screen capture for improved performance
 - [ ] Add Colorbot module
-- [ ] Expand AI inference with ONNX models
-- [ ] Release updated showcase video
 
 ## Build Instructions
 ```bash
