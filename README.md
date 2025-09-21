@@ -30,7 +30,7 @@ The mouse inputs will be passed over through to the Arduino Leonardo which is re
 
 ## Build Instructions
 ```bash
-git clone https://github.com/KQask/Yolov8-AI-Detection.git
+git clone https://github.com/KQask/Yolov8-AI-Tracking.git
 cd valorant-ai-assist
 mkdir build && cd build
 cmake ..
