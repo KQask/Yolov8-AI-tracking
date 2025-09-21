@@ -21,7 +21,7 @@ The mouse inputs will be passed over through to the Arduino Leonardo which is re
 - Arduino Leonardo
 - Two PC's one being capable of running Valorant, the other being capable of AI inference using NVIDIA CUDA
 - Network switch to ensure a stable and fast connection between the two PC's
-
+- Moonlight/Sunshine client OR OBS NDI plugin for streaming the game to the secondary PC
 ## Roadmap
 - [x] Initial prototype with basic tracking
 - [x] Expand AI inference with ONNX models
