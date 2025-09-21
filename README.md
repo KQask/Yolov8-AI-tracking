@@ -1,6 +1,7 @@
 # Valorant AI Assist & Tracking
 
-An experimental AI-assisted aim and tracking system for Valorant. Built entirely in C++ with ONNX Runtime CUDA support.
+An experimental AI-assisted aim and tracking system for Valorant. Built entirely in C++ with ONNX Runtime CUDA support. Currently undetected 
+and bypasses the Vanguard simply by utilizing two PC's. One will be utilized for the actual game, and the other will run the mouse emulation and the AI inference. The mouse inputs will be passed over through to the Arduino Leonardo which is replicated on the other end PC. This solution produces close to zero latency mouse movements and inputs. The Moonlight/Sunshine client or OBS with NDI plugin and a network switch allows access to the other PC's screens with relatively low latency.
 
 ## Features
 - High-performance screen capture (currently being re-coded for better FPS and lower latency)
@@ -19,6 +20,7 @@ An experimental AI-assisted aim and tracking system for Valorant. Built entirely
 - `onnxruntime_providers_cuda.dll` must be in the project directory or available in PATH
 - Arduino Leonardo
 - Two PC's one being capable of running Valorant, the other being capable of AI inference using NVIDIA CUDA
+- Network switch to ensure a stable and fast connection between the two PC's
 
 ## Roadmap
 - [x] Initial prototype with basic tracking
