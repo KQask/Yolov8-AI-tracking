@@ -1,41 +1,59 @@
 # Valorant AI Assist & Tracking
 
-An experimental AI-assisted aim and tracking system for Valorant. Built entirely in C++ with ONNX Runtime CUDA support. Utilizes a custom Yolov8 trained model for inference. Currently undetected and bypasses Vanguard simply by utilizing two PC's. One will be utilized for the actual game, and the other will run the mouse emulation and the AI inference. 
-The mouse inputs will be passed over through to the Arduino Leonardo which is replicated on the other end PC. This solution produces close to zero latency mouse movements and inputs. The Moonlight/Sunshine client or OBS with NDI plugin and a network switch allows access to the other PC's screens with relatively low latency.
+An experimental AI-assisted aim and tracking system for *Valorant*, developed in **C++** with **ONNX Runtime** and **CUDA acceleration**. The system leverages a custom **YOLOv8** model for real-time inference.
+
+To remain undetected by Riot’s Vanguard anti-cheat, the solution operates across **two separate PCs**:  
+- **PC 1**: Runs *Valorant*  
+- **PC 2**: Handles AI inference, mouse emulation, and input relay
+
+Mouse inputs are transmitted via an **Arduino Leonardo**, ensuring near-zero latency. Game visuals are streamed to the inference PC using either **Moonlight/Sunshine** or **OBS with NDI**, supported by a dedicated network switch for minimal latency.
+
+---
 
 ## Features
-- High-performance screen capture (currently being re-coded for faster inference)
-- AI-based tracking module (prototype)
-- Colorbot integration (in progress)
-- Smoothing, FOV, and recoil control system (RCS)
-- Mouse emulation passed through Arduino to the second PC
+- High-performance screen capture (currently being reimplemented for improved performance)  
+- AI-driven tracking module (prototype)  
+- Planned Colorbot integration  
+- Customizable smoothing, FOV, and recoil control system (RCS)  
+- Low-latency mouse emulation via Arduino passthrough  
+
+---
 
 ## Showcase
-[Watch the showcase video here](https://streamable.com/1y7u62)
+[Watch the demo](https://streamable.com/1y7u62)
+
+---
 
 ## Requirements
-- C++20 compliant compiler (MSVC or g++)
-- OpenCV 4.x
-- ONNX Runtime with CUDA support
-- `onnxruntime_providers_cuda.dll` must be in the project directory or available in PATH
-- Arduino Leonardo
-- Two PC's one being capable of running Valorant, the other being capable of AI inference using NVIDIA CUDA
-- Network switch to ensure a stable and fast connection between the two PC's
-- Moonlight/Sunshine client OR OBS NDI plugin for streaming the game to the secondary PC
-## Roadmap
-- [x] Initial prototype with basic tracking
-- [x] Expand AI inference with ONNX models
-- [ ] Re-code screen capture for improved performance
-- [ ] Add Colorbot module
+- **C++20** compliant compiler (MSVC or g++)  
+- **OpenCV 4.x**  
+- **ONNX Runtime with CUDA support**  
+- `onnxruntime_providers_cuda.dll` in project directory or PATH  
+- **Arduino Leonardo**  
+- Two PCs:  
+  - Gaming PC (running Valorant)  
+  - Inference PC (NVIDIA CUDA capable)  
+- **Network switch** for low-latency communication  
+- **Moonlight/Sunshine** client or **OBS NDI plugin** for video streaming  
 
-## Build Instructions
-```bash
-git clone https://github.com/KQask/Yolov8-AI-Tracking.git
-cd Yolov8-AI-Tracking
-mkdir build && cd build
-cmake ..
-cmake --build .
-```
+---
+
+## Build / Distribution Note
+Build instructions, Arduino source code, and any techniques for Arduino spoofing or input injection are **intentionally omitted** from this repository. This omission is deliberate: I did not provide build instructions because I do not want this work to be abused in live games or distributed in a way that enables misuse. The repository likewise does not include Arduino firmware or any method for spoofing Arduino devices. The project is published as a proof-of-concept for research and education only; any practical deployment or distribution would require the user to add those artifacts intentionally.
+
+---
+
+## Roadmap
+- [x] Initial prototype with basic AI tracking  
+- [x] Integration of ONNX-based inference  
+- [ ] Optimized screen capture for higher FPS and reduced latency  
+- [ ] Implementation of Colorbot module  
+- [ ] Expanded configuration options (smoothing, RCS, FOV customization)  
+- [ ] Improved modular architecture for easier feature integration  
+
+---
 
 ## Disclaimer
-I do not condone the usage of this in live games. This is purely as a proof of concept and I do not encourage using this in live games. 
+This project is a proof of concept intended solely for educational and research purposes.I do **not** endorse or encourage the use of AI-assisted aiming systems in live games, as doing so violates the terms of service of *Valorant* and may result in permanent bans.
+
+---
